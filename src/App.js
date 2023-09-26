@@ -73,7 +73,7 @@ const App = () => {
                 <h5>
                     Visibility : {weatherData?.visibility} meters
                 </h5>
-               <h5></h5>
+              
             </div>
 
     
