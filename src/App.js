@@ -11,15 +11,25 @@ const App = () => {
     setWeatherData(respone.data);
   }
 
-  const [weatherdata, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({});
 
   useEffect(() => {
     loadWeatherData();
-  }, [weatherdata, setWeatherData]);
+  }, [weatherData, setWeatherData]);
 
   return (
     <>
-      <h1>Go Weather</h1>
+      <div>
+        <h1>Go Weather</h1>
+        <p>city : {weatherData?.name}</p>
+        <p>Temprature : {(weatherData?.main?.temp - 273).toFixed(2)}°C</p>
+        <p>
+          Description: {weatherData?.weather && weatherData?.weather[0]?.main} (
+          {weatherData?.weather && weatherData?.weather[0]?.description})
+        </p>
+
+        <p>Visibility : { weatherData?.visibility } meters</p>
+      </div>
     </>
   );
 };
