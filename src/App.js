@@ -33,8 +33,11 @@ const App = () => {
 
   return (
     <>
-      <div>
-        <h1>Go Weather {city}</h1>
+      {/* <div>
+        <div className="container py-2 bg-dark w-50 mt-2">
+        <h1 className="text-center text-white">Go Weather {city}</h1>
+
+        </div>
         <input
           type="text"
           value={city}
@@ -50,7 +53,30 @@ const App = () => {
         </p>
 
         <p>Visibility : {weatherData?.visibility} meters</p>
-      </div>
+      </div> */}
+      <div className="text-center content shadow">
+                <h1 className="text-center mt-4">Weather App</h1>
+
+                <input type="text" className="shadow input-box" value={city} onChange={(e) => {
+                    setCity(e.target.value);
+                }} />
+
+                <h2 className="mt-5">{weatherData.name}</h2>
+
+               <img src={`http://openweathermap.org/img/wn/${weatherData?.weather[0]?.icon}@2x.png`} /> 
+
+                <h4>Temperature : {(weatherData?.main?.temp - 273).toFixed(2)} °C</h4>
+
+                <p>  Description: {weatherData?.weather && weatherData?.weather[0]?.main} (
+          {weatherData?.weather && weatherData?.weather[0]?.description})</p>
+
+                <h5>
+                    Visibility : {weatherData?.visibility} meters
+                </h5>
+               <h5></h5>
+            </div>
+
+    
     </>
   );
 };
