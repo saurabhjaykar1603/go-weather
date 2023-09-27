@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import WeatherCards from "./components/WeatherCards/WeatherCards";
+import GithubIcon from "./images/github.png";
 
 const App = () => {
   const [weatherData, setWeatherData] = useState({});
@@ -69,11 +70,17 @@ const App = () => {
           />
         </section>
 
-          <h2 className="text-center fw-bold">  Read the Sky Before You Fly 😶‍🌫️</h2>
-      
-
-      
+        <h2 className="text-center fw-bold"> Read the Sky Before You Fly 😶‍🌫️</h2>
       </div>
+      <section>
+        <a
+          href="https://github.com/saurabhjaykar1603/go-weather"
+          target="blank"
+        >
+          {" "}
+          <img src={GithubIcon} alt="" className="github-icon" />
+        </a>
+      </section>
     </>
   );
 };
